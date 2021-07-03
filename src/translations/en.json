@@ -1,0 +1,30 @@
+{
+  "lang": "English",
+  "m-c-w": "MultiColored Words",
+  "m-c-w-text": "Before you is a list of words written in different colors. Start in order with the first word to name aloud the color in which the text is written. Go to the end and then repeat in the reverse order. It will be difficult at first, since different hemispheres of the brain are responsible for the perception of text and color.",
+  "m-c-w-list": "Effective prevention of Alzheimer's disease: helps to establish new connections between the hemispheres, trains concentration and attention shifting.",
+  "benefits": "Benefits",
+  "table-size": "Table size",
+  "columns": "Columns",
+  "rows": "Rows",
+  "speed": "Speed",
+  "direction": "Direction",
+  "start-to-end": "From top to bottom",
+  "end-to-start": "From bottom to top",
+  "random": "Random",
+  "play": "Play",
+  "refresh": "Refresh",
+  "show-palette": "Palette",
+  "colors": {
+    "red": "Red",
+    "yellow": "Yellow",
+    "green": "Green",
+    "blue": "Blue",
+    "gray": "Gray",
+    "black": "Black",
+    "purple": "Purple",
+    "orange": "Orange"
+  },
+  "got-it": "Got it",
+  "main-text": "This site is dedicated to various games and exercises for brain training."
+}
