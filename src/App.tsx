@@ -14,7 +14,7 @@ function App() {
 
     return (
         <Fragment>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <Segment inverted>
                     <Menu inverted pointing secondary>
                         <Menu.Item
