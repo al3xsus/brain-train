@@ -21,7 +21,7 @@ const MultiColoredWords = () => {
     const [rowNum, setRowNum] = React.useState(4)
     const [colNum, setColNum] = React.useState(4)
     const [speed, setSpeed] = React.useState(0.5)
-    const [colourfulTable, setColourfulTable] = React.useState<any>(null)
+    const [colourfulTable, setColourfulTable] = React.useState<null | JSX.Element>(null)
     const [direction, setDirection] = React.useState("start-to-end")
 
     const playGame = async () => {
@@ -145,7 +145,7 @@ const MultiColoredWords = () => {
     }
 
     return (
-        <Container fluid={true} style={{maxHeight: "100vh", maxWidth: "100vw"}}>
+        <Container>
             <h2 style={{textAlign: "center"}}>{t("m-c-w")}</h2>
             <p style={{padding: "2vh 2vw 2vh 2vw", fontSize: "25px", margin: 0}}>
                 {t("m-c-w-text")}

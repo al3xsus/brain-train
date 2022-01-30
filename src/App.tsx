@@ -1,13 +1,14 @@
 import React, {Fragment} from 'react';
 import './App.css';
 import MultiColoredWords from "./components/MultiColoredWords";
-import {Dropdown, Image, Menu, Segment} from 'semantic-ui-react'
+import {Image, Menu, Segment} from 'semantic-ui-react'
 import AppLogo from "../src/assets/Brain.svg"
 import {useTranslation, withTranslation} from "react-i18next";
-import i18 from './i18';
 
 import {BrowserRouter as Router, NavLink as Link, Route, Switch} from "react-router-dom";
 import Home from "./components/Home";
+import LanguageChangerDropdown from "./components/LanguageChangerDropdown";
+import SchulteTable from "./components/SchulteTable";
 
 function App() {
     const {t} = useTranslation()
@@ -15,8 +16,8 @@ function App() {
     return (
         <Fragment>
             <Router basename={process.env.PUBLIC_URL}>
-                <Segment inverted>
-                    <Menu inverted pointing secondary>
+                <Segment inverted size='mini'>
+                    <Menu inverted pointing secondary size='tiny'>
                         <Menu.Item
                             as={Link}
                             name='home'
@@ -32,24 +33,15 @@ function App() {
                         >
                             {t("m-c-w")}
                         </Menu.Item>
+                        <Menu.Item
+                            as={Link}
+                            name='schulte-table'
+                            to={'schulte-table'}
+                        >
+                            {t("schulte-table")}
+                        </Menu.Item>
                         <Menu.Item position={'right'}>
-                            <Dropdown
-                                options={
-                                    [
-                                        {key: 'ru', value: 'ru', flag: 'ru', text: "Русский"},
-                                        {key: 'en', value: 'en', flag: 'us', text: 'English'},
-                                    ]
-                                }
-                                onChange={(event, data) => {
-                                    i18.changeLanguage(data.value as string);
-                                }}
-                                button
-                                className='icon'
-                                floating
-                                labeled
-                                icon='world'
-                                value={i18.language}
-                            />
+                            <LanguageChangerDropdown/>
                         </Menu.Item>
                     </Menu>
                 </Segment>
@@ -59,6 +51,9 @@ function App() {
                     </Route>
                     <Route path="/multi-colored-words">
                         <MultiColoredWords/>
+                    </Route>
+                    <Route path="/schulte-table">
+                        <SchulteTable/>
                     </Route>
                     <Route>
                         <Error404/>
