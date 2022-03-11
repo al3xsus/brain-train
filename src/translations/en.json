@@ -21,11 +21,10 @@
     "green": "Green",
     "blue": "Blue",
     "gray": "Gray",
-    "black": "Black",
-    "purple": "Purple",
-    "orange": "Orange"
+    "black": "Black"
   },
   "got-it": "Got it",
   "main-text": "This site is dedicated to various games and exercises for brain training.",
-  "schulte-table": "Schulte Table"
+  "info": "Info",
+  "stop": "Stop"
 }

@@ -8,7 +8,7 @@ import {useTranslation, withTranslation} from "react-i18next";
 import {BrowserRouter as Router, NavLink as Link, Route, Switch} from "react-router-dom";
 import Home from "./components/Home";
 import LanguageChangerDropdown from "./components/LanguageChangerDropdown";
-import SchulteTable from "./components/SchulteTable";
+import Error404 from "./components/Error404";
 
 function App() {
     const {t} = useTranslation()
@@ -33,13 +33,6 @@ function App() {
                         >
                             {t("m-c-w")}
                         </Menu.Item>
-                        <Menu.Item
-                            as={Link}
-                            name='schulte-table'
-                            to={'schulte-table'}
-                        >
-                            {t("schulte-table")}
-                        </Menu.Item>
                         <Menu.Item position={'right'}>
                             <LanguageChangerDropdown/>
                         </Menu.Item>
@@ -52,9 +45,6 @@ function App() {
                     <Route path="/multi-colored-words">
                         <MultiColoredWords/>
                     </Route>
-                    <Route path="/schulte-table">
-                        <SchulteTable/>
-                    </Route>
                     <Route>
                         <Error404/>
                     </Route>
@@ -62,14 +52,6 @@ function App() {
             </Router>
         </Fragment>
     );
-}
-
-function Error404() {
-    return (
-        <div>
-            <h2>No such address :(</h2>
-        </div>
-    )
 }
 
 export default withTranslation()(App);

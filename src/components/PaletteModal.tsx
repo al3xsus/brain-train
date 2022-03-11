@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button, Form, Icon, Item, Modal} from 'semantic-ui-react'
 import {useTranslation} from "react-i18next"
-import palette from "./palette";
+import Palette from "./Palette";
 
 const PaletteModal = () => {
     const [open, setOpen] = React.useState(false)
@@ -21,17 +21,17 @@ const PaletteModal = () => {
             <Modal.Content scrolling={true}>
                 <Modal.Description>
                     <Item.Group divided relaxed={true}>
-                        {palette.map((entry, index) => {
-                            return <Item key={`palette-${index}`}>
+                        {Palette.map((entry, index) => {
+                            return <Item key={`Palette-${index}`}>
                                 <Item.Content verticalAlign='middle'>
                                     <div style={{
                                         height: "3vh",
                                         width: "3vw",
-                                        backgroundColor: Object.values(entry)[0]
+                                        backgroundColor: entry.code
                                     }}/>
                                 </Item.Content>
                                 <Item.Content
-                                    verticalAlign='middle'>{t(`colors.${Object.keys(entry)[0]}`).toUpperCase()}</Item.Content>
+                                    verticalAlign='middle'>{t(`colors.${entry.name}`).toUpperCase()}</Item.Content>
                             </Item>
                         })}
                     </Item.Group>

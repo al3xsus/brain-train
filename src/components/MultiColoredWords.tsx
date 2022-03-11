@@ -1,5 +1,4 @@
 import React, {FormEvent, SyntheticEvent} from "react";
-import './MultiColoredWords.css'
 import {
     ButtonProps,
     Checkbox,
@@ -10,56 +9,106 @@ import {
     Form,
     Grid,
     Icon,
-    List
+    Table
 } from "semantic-ui-react";
 import {useTranslation} from "react-i18next";
-import palette from "./palette";
+import Palette from "./Palette";
 import PaletteModal from "./PaletteModal";
+import MultiColoredWordsInfoModal from "./MultiColoredWordsInfoModal";
+
+const COLUMN_SIZE = [3, 4, 5, 6, 7]
+const ROW_SIZE = [3, 4, 5, 6, 7]
 
 const MultiColoredWords = () => {
     const {t} = useTranslation()
     const [rowNum, setRowNum] = React.useState(4)
     const [colNum, setColNum] = React.useState(4)
     const [speed, setSpeed] = React.useState(0.5)
-    const [colourfulTable, setColourfulTable] = React.useState<null | JSX.Element>(null)
+    const [tableData, setTableData] = React.useState<any>(null)
     const [direction, setDirection] = React.useState("start-to-end")
+    const [activeCell, setActiveCell] = React.useState<null | number>(null)
+    const [gameStatus, setGameStatus] = React.useState(false)
 
-    const playGame = async () => {
-        if (direction === "start-to-end") {
-            for (let stepRow = 0; stepRow < rowNum; stepRow++) {
-                for (let stepCol = 0; stepCol < colNum; stepCol++) {
-                    let elem: any = document.getElementById(`text-${stepRow}-${stepCol}`);
-                    elem.style = "text-decoration: underline"
-                    await timeout(speed * 1000)
-                    elem.style = ""
-                }
-            }
-        } else {
-            let col = 0
-            let row = 0
-            let elem: any = null
-            for (let step = (rowNum * colNum) - 1; step >= 0; step--) {
-                row = Math.floor(step / colNum)
-                col = step - (row * colNum)
-                elem = document.getElementById(`text-${row}-${col}`);
-                elem.style = "text-decoration: underline"
-                await timeout(speed * 1000)
-                elem.style = ""
+    const underlineSVG = (address: number, highlight: boolean) => {
+        let [row, col] = [0, 0]
+        if (address !== 0) {
+            row = Math.floor(address / colNum)
+            col = address - (row * colNum)
+        }
+        let elem: null | HTMLElement = document.getElementById(`text-${row}-${col}`)
+        if (elem) {
+            if (highlight) {
+                elem.setAttribute("style", "text-decoration: underline")
+            } else {
+                elem.setAttribute("style", "")
             }
         }
     }
 
-    const setTable = () => {
-        setColourfulTable(generateTable(rowNum, colNum))
+    const changeGameStatus = () => {
+        if (gameStatus) {
+            setActiveCell(null)
+            if (activeCell !== null) {
+                underlineSVG(activeCell, false)
+            }
+        }
+        setGameStatus(!gameStatus)
     }
 
-    const timeout = (delay: number) => {
-        return new Promise(res => setTimeout(res, delay));
+    const setTable = () => {
+        setTableData(prepareData())
     }
 
     React.useEffect(() => {
         setTable()
     }, [rowNum, colNum])
+
+    React.useEffect(() => {
+        let interval: (any) = null
+        if (gameStatus) {
+            if (activeCell === null) {
+                interval = setInterval(() => {
+                    if (direction === "start-to-end") {
+                        setActiveCell(0)
+                        underlineSVG(0, true)
+                    } else {
+                        setActiveCell((rowNum * colNum) - 1)
+                        underlineSVG((rowNum * colNum) - 1, true)
+                    }
+                }, speed * 1000)
+            } else {
+                const cleanUp = () => {
+                    setActiveCell(null)
+                    setGameStatus(false)
+                    underlineSVG(activeCell, false)
+                }
+                if (direction === "start-to-end") {
+                    if (activeCell < (rowNum * colNum) - 1) {
+                        interval = setInterval(() => {
+                            setActiveCell(activeCell + 1)
+                            underlineSVG(activeCell + 1, true)
+                            underlineSVG(activeCell, false)
+                        }, speed * 1000)
+                    } else {
+                        cleanUp()
+                    }
+                } else {
+                    if (activeCell >= 0) {
+                        interval = setInterval(() => {
+                            setActiveCell(activeCell - 1)
+                            underlineSVG(activeCell - 1, true)
+                            underlineSVG(activeCell, false)
+                        }, speed * 1000)
+                    } else {
+                        cleanUp()
+                    }
+                }
+            }
+        } else if (!gameStatus && activeCell !== null) {
+            clearInterval(interval);
+        }
+        return () => clearInterval(interval);
+    }, [gameStatus, activeCell]);
 
     const handleChange = (event: SyntheticEvent<HTMLElement>, data: DropdownProps | ButtonProps) => {
         switch (data.name) {
@@ -86,79 +135,66 @@ const MultiColoredWords = () => {
         setDirection(data.value as string)
     }
 
-    const generateTable = (rows: number, columns: number) => {
-        let data: any = []
+    const prepareData = () => {
+        let data: [number, number][][] = []
         let word = 0
         let color = 0
-        for (let i = 0; i < rows; i++) {
-            let row: any = []
-            for (let k = 0; k < columns; k++) {
-                word = Math.floor(Math.random() * palette.length)
-                color = Math.floor(Math.random() * palette.length)
-                if (k > 0) {
-                    if (row[k - 1][1] === color) {
-                        if (color < palette.length - 1) {
-                            color += 1
-                        } else {
-                            color -= 1
-                        }
-                    }
-                    if (row[k - 1][0] === word) {
-                        if (word < palette.length - 1) {
-                            word += 1
-                        } else {
-                            word -= 1
-                        }
-                    }
-                }
+        for (let i = 0; i < rowNum; i++) {
+            let row: [number, number][] = []
+            for (let k = 0; k < colNum; k++) {
+                word = Math.floor(Math.random() * Palette.length)
+                color = Math.floor(Math.random() * Palette.length)
                 row.push([word, color])
             }
             data.push(row)
         }
-        return (
-            <table>
-                <tbody>
-                {
-                    data.map((row: any, rowIndex: number) => <tr key={`tr-key-${rowIndex}`}>
-                        {row.map((cell: any, index: number) => {
-                            return <td key={`td-key-${rowIndex}-${index}`}>{
-                                <svg viewBox="0 0 100 20" style={{
-                                    width: "100%",
-                                    padding: "1vh 1vw",
-                                    fill: Object.values(palette[cell[1]])[0],
-                                }}>
-                                    <text
-                                        x="0"
-                                        y="15"
-                                        id={`text-${rowIndex}-${index}`}
-                                    >
-                                        {t(`colors.${Object.keys(palette[cell[0]])[0]}`).toUpperCase()}
-                                    </text>
-                                </svg>
-                            }</td>
-                        })}
-                    </tr>)
-                }
-                </tbody>
-            </table>
-        )
+        return data
+    }
+
+    const generateTable = () => {
+        if (tableData) {
+            return tableData.map((row: [number, number][], rowIndex: number) => <Table.Row key={`tr-key-${rowIndex}`}>
+                {row.map((cell: [number, number], index: number) => {
+                    return <Table.Cell key={`td-key-${rowIndex}-${index}`}>
+                        <svg viewBox="0 0 100 20" style={{
+                            width: "100%",
+                            padding: "1vh 1vw",
+                            fill: Palette[cell[1]].code
+                        }}>
+                            <text
+                                x="0"
+                                y="15"
+                                id={`text-${rowIndex}-${index}`}
+                            >
+                                {t(`colors.${Palette[cell[0]].name}`).toUpperCase()}
+                            </text>
+                        </svg>
+                    </Table.Cell>
+                })}
+            </Table.Row>)
+        }
+        return null
     }
 
     return (
-        <Container>
+        <Container style={{
+            width: "90vw"
+        }}>
             <h2 style={{textAlign: "center"}}>{t("m-c-w")}</h2>
-            <p style={{padding: "2vh 2vw 2vh 2vw", fontSize: "25px", margin: 0}}>
-                {t("m-c-w-text")}
-            </p>
-            <List bulleted style={{padding: "0 3vw 0 3vw", marginTop: 0, fontSize: "20px"}}>
-                <List.Item><b>{t("benefits")}: </b>{t("m-c-w-list")}</List.Item>
-            </List>
             <Grid celled={true} columns={2} doubling={true} stackable={true}>
                 <Grid.Column width={13}>
-                    {colourfulTable}
+                    <Table basic={"very"} size={"large"} celled={true}>
+                        <Table.Body>
+                            {generateTable()}
+                        </Table.Body>
+                    </Table>
                 </Grid.Column>
                 <Grid.Column width={3}>
                     <Form size={"huge"}>
+                        <Form.Field>
+                            <MultiColoredWordsInfoModal/>
+                        </Form.Field>
+                        <Divider/>
                         <Form.Field>
                             {t("table-size")}
                         </Form.Field>
@@ -168,7 +204,7 @@ const MultiColoredWords = () => {
                                 name={'column-picker'}
                                 label={t("columns")}
                                 options={
-                                    [3, 4, 5, 6, 7].map((numb) => {
+                                    COLUMN_SIZE.map((numb) => {
                                         return {
                                             text: numb,
                                             value: numb
@@ -183,7 +219,7 @@ const MultiColoredWords = () => {
                                 name={'rows-picker'}
                                 label={t("rows")}
                                 options={
-                                    [3, 4, 5, 6, 7].map((numb) => {
+                                    ROW_SIZE.map((numb) => {
                                         return {
                                             text: numb,
                                             value: numb
@@ -246,9 +282,9 @@ const MultiColoredWords = () => {
                         </Form.Field>
                         <Divider/>
                         <PaletteModal/>
-                        <Form.Button primary basic color={"red"} size={"huge"} fluid={true} onClick={playGame}>
-                            <Icon name='play' color={"red"}/>
-                            {t("play")}
+                        <Form.Button primary basic color={"red"} size={"huge"} fluid={true} onClick={changeGameStatus}>
+                            <Icon name={gameStatus ? "square" : "play"} color={"red"}/>
+                            {gameStatus ? t("stop") : t("play")}
                         </Form.Button>
                         <Form.Button primary basic color={"blue"} size={"huge"} fluid={true} onClick={setTable}>
                             <Icon name='refresh' color={"blue"}/>
