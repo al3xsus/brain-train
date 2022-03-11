@@ -19,7 +19,8 @@
     "brain training",
     "mental health",
     "react",
-    "semantic-ui-react"
+    "semantic-ui-react",
+    "typescript"
   ],
   "description": "Web application for various games and exercises for brain training",
   "repository": {

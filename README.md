@@ -3,6 +3,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This project also
 use [Semantic UI React](https://react.semantic-ui.com/) and Typescript.
 
+Real life version could be seen here - [https://al3xsus.github.io/brain-train/](https://al3xsus.github.io/brain-train/)
+
 ## Available Scripts
 
 In the project directory, you can run:
