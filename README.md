@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Web Application for brain training
+
+[Medium post](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This project also
 use [Semantic UI React](https://react.semantic-ui.com/) and Typescript.
