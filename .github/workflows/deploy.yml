@@ -22,7 +22,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build the project
-        run: yarn build
+        run: CI="" yarn build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
