@@ -1,51 +1,93 @@
-# Web Application for brain training
+---
+title: "Brain Train – Stroop Effect Game in React"
+description: "A brain training game web app based on the Stroop Effect, built with React, TypeScript, and Semantic UI. Inspired by cognitive science and personal motivation."
+slug: "brain-train"
+date: 2025-01-30
+updated: 2025-01-30
+tags: ["react", "typescript", "brain-training", "stroop-effect", "accessibility", "games", "semantic-ui"]
+coverImage: "/images/brain-train-cover.webp"
+githubUrl: "https://github.com/al3xsus/brain-train"
+liveDemo: "https://al3xsus.github.io/brain-train/"
+techStack: ["React", "TypeScript", "Semantic UI", "SVG"]
+canonical: "https://github.com/al3xsus/brain-train"
+---
 
-[Medium post](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
+# Brain Train 🧠🎮
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This project also
-use [Semantic UI React](https://react.semantic-ui.com/) and Typescript.
+**Brain Train** is a web-based game inspired by the *Stroop Effect*, a psychological phenomenon where it's difficult to name the color of the word instead of reading the word itself.
 
-Real life version could be seen here - [https://al3xsus.github.io/brain-train/](https://al3xsus.github.io/brain-train/)
+Built in memory my mother and inspired by the rising need for tools that help older adults maintain cognitive function, this app uses colors, timing, and randomization to challenge users.
 
-## Available Scripts
+👉 [Read the full blog post on Medium](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
 
-In the project directory, you can run:
+---
 
-### `yarn start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Color-word matching game based on the Stroop effect
+- Configurable rows, columns, speed, and direction
+- SVG text rendering for precision and responsiveness
+- Interactive play/pause logic with timed highlighting
+- Built using React hooks and TypeScript
+- Clean, accessible UI via Semantic UI React
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `yarn test`
+## 🧰 Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Layer    | Tools Used           |
+|----------|----------------------|
+| Frontend | React + TypeScript   |
+| UI       | Semantic UI, SVG     |
+| Logic    | Custom randomization & game engine |
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🎮 Gameplay Logic
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Randomly generated color-word pairs
+- Active cell highlighted over time based on selected direction
+- Use of SVG for consistent, scalable rendering
+- Efficient use of React hooks to manage intervals and state
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `yarn eject`
+## ⚙️ Installation
 
-# Deploy and development notes
+```bash
+git clone https://github.com/al3xsus/brain-train.git
+cd brain-train
+npm install
+npm start
+```
 
-I've used Node v14.17.1
+Open [http://localhost:3000](http://localhost:3000) to run it locally.
 
-## Screenshots
+---
 
-MultiColoredWords in Russian
+## 🧩 Related Blog Posts
 
-![Screenshot in Russian](screenshots/MulticoloredWordsRu.png?raw=true "Multicolored Words in Russian")
+- 👉 [How To Create a Web Application For Brain Training with React](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
 
-MultiColoredWords in English
+---
 
-![Screenshot in English](screenshots/MulticoloredWordsEn.png?raw=true "Multicolored Words in English")
+## 💡 Background & Purpose
+
+This app was built for the hope it could help others strengthen cognitive function, particularly older adults at risk of mental decline.
+
+> “By 2050, one in four people in Europe and North America could be aged 65 or over.”  
+> — *UN World Population Prospects, 2019*
+
+---
+
+## 📜 License & Credits
+
+Built with ❤️ using React, SVG, and a desire to make brain health tools accessible to all.
+License details: _(check LICENSE file on GitHub)_.
+
+---
+
+## 🔗 Links
+
+- **Live Demo:** [Try It Online](https://al3xsus.github.io/brain-train/)
+- **Original Blog Post:** [Read on Medium](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
