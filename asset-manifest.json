@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/brain-train/static/css/main.c2d67b2f.chunk.css",
-    "main.js": "/brain-train/static/js/main.fbc9fa1c.chunk.js",
-    "main.js.map": "/brain-train/static/js/main.fbc9fa1c.chunk.js.map",
+    "main.js": "/brain-train/static/js/main.ae36d1dc.chunk.js",
+    "main.js.map": "/brain-train/static/js/main.ae36d1dc.chunk.js.map",
     "runtime-main.js": "/brain-train/static/js/runtime-main.d3208b79.js",
     "runtime-main.js.map": "/brain-train/static/js/runtime-main.d3208b79.js.map",
     "static/css/2.a8cb256e.chunk.css": "/brain-train/static/css/2.a8cb256e.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.a8cb256e.chunk.css",
     "static/js/2.1de5da62.chunk.js",
     "static/css/main.c2d67b2f.chunk.css",
-    "static/js/main.fbc9fa1c.chunk.js"
+    "static/js/main.ae36d1dc.chunk.js"
   ]
 }
