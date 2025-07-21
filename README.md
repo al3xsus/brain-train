@@ -5,7 +5,7 @@ slug: "brain-train"
 date: 2025-01-30
 updated: 2025-01-30
 tags: ["react", "typescript", "brain-training", "stroop-effect", "accessibility", "games", "semantic-ui"]
-coverImage: "/images/brain-train-cover.webp"
+coverImage: "/public/images/brain-train-cover.webp"
 githubUrl: "https://github.com/al3xsus/brain-train"
 liveDemo: "https://al3xsus.github.io/brain-train/"
 techStack: ["React", "TypeScript", "Semantic UI", "SVG"]
@@ -14,9 +14,11 @@ canonical: "https://github.com/al3xsus/brain-train"
 
 # Brain Train 🧠🎮
 
+![Brain train cover image](/public/images/brain-train-cover.webp)
+
 **Brain Train** is a web-based game inspired by the *Stroop Effect*, a psychological phenomenon where it's difficult to name the color of the word instead of reading the word itself.
 
-Built in memory my mother and inspired by the rising need for tools that help older adults maintain cognitive function, this app uses colors, timing, and randomization to challenge users.
+Built in memory of my mother and inspired by the rising need for tools that help older adults maintain cognitive function, this app uses colors, timing, and randomization to challenge users.
 
 👉 [Read the full blog post on Medium](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
 
@@ -73,7 +75,7 @@ Open [http://localhost:3000](http://localhost:3000) to run it locally.
 
 ## 💡 Background & Purpose
 
-This app was built for the hope it could help others strengthen cognitive function, particularly older adults at risk of mental decline.
+This app was built with the hope that it could help others strengthen cognitive function, particularly older adults at risk of mental decline.
 
 > “By 2050, one in four people in Europe and North America could be aged 65 or over.”  
 > — *UN World Population Prospects, 2019*
