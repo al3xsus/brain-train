@@ -1,9 +1,15 @@
 {
   "name": "brain-train",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A brain training game web app based on the Stroop Effect, built with React, TypeScript, and Semantic UI.",
+  "keywords": [
+    "react", "typescript", "brain-training", "stroop-effect", "accessibility", "games", "semantic-ui"
+  ],
   "author": {
     "name": "Alexandr Lavrentyev",
-    "email": "al3xsus@pm.me"
+    "email": "al3xsus@pm.me",
+    "url": "https://github.com/al3xsus"
   },
   "contributors": [
     {
@@ -11,23 +17,24 @@
       "email": "al3xsus@pm.me"
     }
   ],
-  "homepage": "https://al3xsus.github.io/brain-train/",
   "license": "MIT",
-  "keywords": [
-    "spa",
-    "brain",
-    "brain training",
-    "mental health",
-    "react",
-    "semantic-ui-react",
-    "typescript"
-  ],
-  "description": "Web application for various games and exercises for brain training",
+  "homepage": "https://al3xsus.github.io/brain-train/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/al3xsus/brain-train"
+    "url": "git+https://github.com/al3xsus/brain-train.git"
   },
-  "private": true,
+  "bugs": {
+    "url": "https://github.com/al3xsus/brain-train/issues"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src --ext .ts,.tsx",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -51,19 +58,8 @@
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
-  },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": ["react-app", "react-app/jest"]
   },
   "browserslist": {
     "production": [
