@@ -4,7 +4,7 @@
   "private": true,
   "description": "A brain training game web app based on the Stroop Effect, built with React, TypeScript, and Semantic UI.",
   "keywords": [
-    "react", "typescript", "brain-training", "stroop-effect", "accessibility", "games", "semantic-ui"
+    "brain-training", "memory-game", "cognitive-app", "react", "typescript", "spa"
   ],
   "author": {
     "name": "Alexandr Lavrentyev",
