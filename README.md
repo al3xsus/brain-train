@@ -6,10 +6,10 @@ date: 2025-01-30
 updated: 2025-01-30
 tags: ["react", "typescript", "brain-training", "stroop-effect", "accessibility", "games", "semantic-ui"]
 coverImage: "/public/images/brain-train-cover.webp"
-githubUrl: "https://github.com/al3xsus/brain-train"
 liveDemo: "https://al3xsus.github.io/brain-train/"
 techStack: ["React", "TypeScript", "Semantic UI", "SVG"]
 canonical: "https://github.com/al3xsus/brain-train"
+mediumURL: https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315
 ---
 
 # Brain Train 🧠🎮
