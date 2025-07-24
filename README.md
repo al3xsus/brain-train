@@ -22,7 +22,7 @@ mediumURL: "https://levelup.gitconnected.com/web-application-for-a-brain-trainin
 [![Deploy with GitHub Pages](https://img.shields.io/badge/deploy-GitHub%20Pages-blue?logo=github)](https://al3xsus.github.io/brain-train/)
 [![Last Commit](https://img.shields.io/github/last-commit/al3xsus/brain-train)](https://github.com/al3xsus/brain-train/commits/main)
 
-![Brain train cover image](/public/images/brain-train-cover.webp)
+![Social preview of Brain Train](social-preview.png)
 
 **Brain Train** is a web-based game inspired by the *Stroop Effect*, a psychological phenomenon where it's difficult to name the color of the word instead of reading the word itself.
 
@@ -114,3 +114,7 @@ License: [MIT](LICENSE)
 
 * **Live Demo:** [Try It Online](https://al3xsus.github.io/brain-train/)
 * **Original Blog Post:** [Read on Medium](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
+
+---
+
+> 🖼️ This repository includes a social preview image for enhanced link sharing.
