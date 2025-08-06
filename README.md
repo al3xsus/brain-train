@@ -32,19 +32,6 @@ Built in memory of my mother and inspired by the rising need for tools that help
 
 ---
 
-## 📚 Table of Contents
-
-* [Features](#-features)
-* [Tech Stack](#-tech-stack)
-* [Gameplay Logic](#-gameplay-logic)
-* [Installation](#️-installation)
-* [Blog Post](#-related-blog-posts)
-* [Purpose](#-background--purpose)
-* [License](#-license--credits)
-* [Links](#-links)
-
----
-
 ## 🚀 Features
 
 * Color-word matching game based on the Stroop effect
