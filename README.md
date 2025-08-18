@@ -3,7 +3,7 @@
 title: "Brain Train – Stroop Effect Game in React"
 description: "Brain Train is a web app offering memory, focus, and logic games to boost cognitive health."
 slug: "brain-train"
-date: 2025-01-30
+created: 2025-01-30
 updated: 2025-01-30
 tags: ["brain-training", "memory", "cognitive-app", "react", "typescript", "spa", "semantic-ui", "cognitive-games"]
 coverImage: "/public/images/brain-train-cover.webp"
