@@ -12,7 +12,11 @@
 
 Built in memory of my mother and inspired by the rising need for tools that help older adults maintain cognitive function, this app uses colors, timing, and randomization to challenge users.
 
-[Read the full blog post on Medium](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
+[Read the full post on Medium](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
+
+or
+
+[In my blog](https://al3xsus.github.io/posts/brain-train/)
 
 ---
 
@@ -59,12 +63,6 @@ Open [http://localhost:3000](http://localhost:3000) to run it locally.
 
 ---
 
-## Related Blog Posts
-
-* [How To Create a Web Application For Brain Training with React](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
-
----
-
 ## Background & Purpose
 
 This app was built with the hope that it could help others strengthen cognitive function, particularly older adults at risk of mental decline.
@@ -84,8 +82,6 @@ License: [MIT](LICENSE)
 ## Links
 
 * **Live Demo:** [Try It Online](https://al3xsus.github.io/brain-train/)
-* **Original Blog Post:** [Read on Medium](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
-
 ---
 
 > This repository includes a social preview image for enhanced link sharing.
