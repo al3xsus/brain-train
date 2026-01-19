@@ -1,20 +1,4 @@
----
-
-title: "Brain Train – Stroop Effect Game in React"
-description: "Brain Train is a web app offering memory, focus, and logic games to boost cognitive health."
-slug: "brain-train"
-created: 2025-01-30
-updated: 2025-01-30
-tags: ["brain-training", "memory", "cognitive-app", "react", "typescript", "spa", "semantic-ui", "cognitive-games"]
-coverImage: "/public/images/brain-train-cover.webp"
-liveDemo: "https://al3xsus.github.io/brain-train/"
-techStack: ["React", "TypeScript", "Semantic UI", "SVG"]
-canonical: "https://github.com/al3xsus/brain-train"
-mediumURL: "https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315"
-
----
-
-# Brain Train – Stroop Effect Game in React 🧠
+# Brain Train – Stroop Effect Game in React
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![React](https://img.shields.io/badge/built%20with-React-61dafb?logo=react)](https://reactjs.org/)
@@ -28,11 +12,11 @@ mediumURL: "https://levelup.gitconnected.com/web-application-for-a-brain-trainin
 
 Built in memory of my mother and inspired by the rising need for tools that help older adults maintain cognitive function, this app uses colors, timing, and randomization to challenge users.
 
-👉 [Read the full blog post on Medium](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
+[Read the full blog post on Medium](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
 
 ---
 
-## 🚀 Features
+## Features
 
 * Color-word matching game based on the Stroop effect
 * Configurable rows, columns, speed, and direction
@@ -43,7 +27,7 @@ Built in memory of my mother and inspired by the rising need for tools that help
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 | Layer    | Tools Used                         |
 | -------- | ---------------------------------- |
@@ -53,16 +37,16 @@ Built in memory of my mother and inspired by the rising need for tools that help
 
 ---
 
-## 🎮 Gameplay Logic
+## Gameplay Logic
 
 * Randomly generated color-word pairs
-* Active cell highlighted over time based on selected direction
+* Active cell highlighted over time based on the selected direction
 * Use of SVG for consistent, scalable rendering
 * Efficient use of React hooks to manage intervals and state
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ```bash
 git clone https://github.com/al3xsus/brain-train.git
@@ -75,13 +59,13 @@ Open [http://localhost:3000](http://localhost:3000) to run it locally.
 
 ---
 
-## 🧩 Related Blog Posts
+## Related Blog Posts
 
-* 👉 [How To Create a Web Application For Brain Training with React](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
+* [How To Create a Web Application For Brain Training with React](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
 
 ---
 
-## 💡 Background & Purpose
+## Background & Purpose
 
 This app was built with the hope that it could help others strengthen cognitive function, particularly older adults at risk of mental decline.
 
@@ -90,18 +74,18 @@ This app was built with the hope that it could help others strengthen cognitive 
 
 ---
 
-## 📜 License & Credits
+## License & Credits
 
 Built with ❤️ using React, SVG, and a desire to make brain health tools accessible to all.
 License: [MIT](LICENSE)
 
 ---
 
-## 🔗 Links
+## Links
 
 * **Live Demo:** [Try It Online](https://al3xsus.github.io/brain-train/)
 * **Original Blog Post:** [Read on Medium](https://levelup.gitconnected.com/web-application-for-a-brain-training-23dc567f0315)
 
 ---
 
-> 🖼️ This repository includes a social preview image for enhanced link sharing.
+> This repository includes a social preview image for enhanced link sharing.
